@@ -10,4 +10,6 @@ public interface BookedRoomRepository extends JpaRepository<BookedRoom, Long> {
     List<BookedRoom> findByRoomId(Long id);
 
     Optional<BookedRoom> findByBookingConfirmationCode(String confirmationCode);
+
+    List<BookedRoom> findByGuestEmail(String email);
 }

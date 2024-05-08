@@ -70,4 +70,9 @@ public class BookedRoomServiceImpl implements IBookedRoomService {
     public void cancelBooking(Long bookingId) {
         repository.deleteById(bookingId);
     }
+
+    @Override
+    public List<BookedRoom> getBookingsByUserEmail(String email) {
+        return repository.findByGuestEmail(email);
+    }
 }
